@@ -81,6 +81,12 @@ jobs:
         .\build\activate_build.ps1
         .\build\activate_run.ps1
         meson test -C .\build
+    - name: Upload Aravis build
+      uses: actions/upload-artifact@v4
+      with:
+        name: aravis-msvc-x64-release
+        path: install/
+        if-no-files-found: error
     - name: logs
       uses: actions/upload-artifact@v4
       if: failure()
