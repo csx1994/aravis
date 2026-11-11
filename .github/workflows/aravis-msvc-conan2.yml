@@ -68,7 +68,7 @@ jobs:
       run: |
         $Env:INPUT_CONANFILE | Out-File -FilePath ${{ github.workspace }}\conanfile.txt -Encoding utf8
         $Env:INPUT_PROFILE | Out-File -FilePath ${{ github.workspace }}\conanprofile.txt -Encoding utf8
-        conan install -pr:a conanprofile.txt --build=missing -of build .
+        conan install -pr:a conanprofile.txt --build=missing -of build --deployer=runtime_deploy --deployer-folder=install/bin .
     - name: meson
       run: |
         .\build\conanbuild.ps1
