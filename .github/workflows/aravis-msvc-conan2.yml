@@ -51,6 +51,9 @@ jobs:
 
           [options]
           glib/*:shared=True
+          libusb/*:shared=True
+          libxml2/*:shared=True
+          zlib/*:shared=True
         INPUT_PROFILE: |
           [settings]
           os=Windows
